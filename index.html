@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultoria Online | Felipe Lima</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Simulador de contador fictício de alunos
+    let alunos = 193;
+    function atualizarContador() {
+      const contador = document.getElementById('contador-alunos');
+      if (contador) contador.innerText = alunos + "+ alunos atendidos";
+    }
+    document.addEventListener('DOMContentLoaded', atualizarContador);
+  </script>
+<script>
+  let wantsToLeave = false;
+  window.addEventListener('beforeunload', function (e) {
+    wantsToLeave = true;
+    e.preventDefault();
+    e.returnValue = 'Antes de sair, que tal garantir sua vaga na consultoria?';
+  });
+
+  window.addEventListener('unload', function () {
+    if (wantsToLeave) {
+      window.location.href = 'https://wa.me/553592436211?text=Quero%20garantir%20minha%20vaga%20na%20consultoria!';
+    }
+  });
+</script>
+</head>
+<body>
+  <header class="top-header">
+    <div class="logo">Felipe Lima</div>
+    <nav>
+      <a href="#consultoria">Consultoria</a>
+      <a href="#feedbacks">Feedbacks</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-wrapper">
+      <div class="hero-image">
+        <img src="perfil.png" alt="Felipe Lima">
+      </div>
+      <div class="hero-content">
+        <h1>Transforme seu corpo<br><strong>com método e resultado</strong></h1>
+        <p>Venha fazer parte do meu time de consultoria online com acompanhamento individual e treinos personalizados.</p>
+        <div class="hero-buttons">
+            <a class="btn-primary btn-whatsapp-cta" href="https://wa.me/553592436211?text=Olá%20Felipe,%20quero%20começar%20meu%20treinamento%20online!" target="_blank">💬 Começar agora</a>
+
+          <a class="btn-outline" href="#consultoria">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline" id="como-funciona">
+    <h2>Como funciona minha consultoria</h2>
+    <div class="timeline-container">
+      <div class="timeline-step">
+        <span class="step-number">1</span>
+        <h3>Contato inicial</h3>
+        <p>Você me chama no WhatsApp e já começamos a conversar sobre seu objetivo.</p>
+      </div>
+      <div class="timeline-step">
+        <span class="step-number">2</span>
+        <h3>Avaliação física</h3>
+        <p>Envio um formulário completo para entender sua rotina, limitações e metas.</p>
+      </div>
+      <div class="timeline-step">
+        <span class="step-number">3</span>
+        <h3>Montagem do treino</h3>
+        <p>Com base na sua avaliação, crio um plano de treino totalmente personalizado.</p>
+      </div>
+      <div class="timeline-step">
+        <span class="step-number">4</span>
+        <h3>Entrega e instruções</h3>
+        <p>Você recebe o treino + orientações de uso do app para acompanhar seu progresso.</p>
+      </div>
+      <div class="timeline-step">
+        <span class="step-number">5</span>
+        <h3>Acompanhamento</h3>
+        <p>Estarei com você pelo WhatsApp para tirar dúvidas, ajustar e te motivar!</p>
+      </div>
+      <div class="timeline-step">
+        <span class="step-number">6</span>
+        <h3>Reavaliação mensal</h3>
+        <p>Analisamos os resultados e ajustamos o plano para a próxima fase do seu progresso.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contador">
+    <p id="contador-alunos" class="contador-texto"></p>
+    <p class="contador-alerta">⚠️ Vagas limitadas para manter um acompanhamento individualizado.</p>
+  </section>
+
+  <section id="consultoria" class="benefits">
+    <h2>O que está incluso na consultoria:</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">📋 Avaliação física individual</div>
+      <div class="benefit-card">📆 Treinos adaptados à sua rotina</div>
+      <div class="benefit-card">📱 Acesso via app e suporte direto</div>
+      <div class="benefit-card">💬 Reavaliações mensais + motivação</div>
+    </div>
+  </section>
+
+  
+  <section id="feedbacks" class="gallery">
+    <h2 class="gallery-title">Feedback dos meus alunos</h2>
+    <div class="gallery-container">
+      <img src="Captura de tela_16-5-4.jpeg" alt="Resultado 1">
+      <img src="Captura de tela_16-5.jpeg" alt="Resultado 2">
+      <img src="Captura de tela_16.jpeg" alt="Resultado 3">
+    </div>
+  </section>
+
+  <section id="contato" class="cta">
+    <p class="cta-highlight">Você já gastou com fast food, delivery ou streaming esse mês.<br><strong>O valor do meu acompanhamento equivale a isso — mas aqui, você investe na sua saúde de verdade.</strong></p>
+    <h2>Pronto para mudar de verdade?</h2>
+    <p>Vamos iniciar juntos essa jornada com estratégia e constância.</p>
+    <a class="btn-primary btn-whatsapp-cta" href="https://wa.me/553592436211?text=Estou%20pronto%20para%20começar%20minha%20consultoria%20com%20você!" target="_blank">
+        💬 Fale comigo no WhatsApp
+      </a>
+      
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Felipe Lima. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
