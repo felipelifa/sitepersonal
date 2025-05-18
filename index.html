@@ -6,6 +6,7 @@
   <title>Consultoria Online | Felipe Lima</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script>
     // Simulador de contador fictício de alunos
     let alunos = 193;
@@ -31,14 +32,16 @@
 </script>
 </head>
 <body>
-  <header class="top-header">
-    <div class="logo">Felipe Lima</div>
-    <nav>
-      <a href="#consultoria">Consultoria</a>
-      <a href="#feedbacks">Feedbacks</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+    <header class="top-header">
+        <div class="logo">Felipe Lima</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu" class="nav-links hidden">
+          <a href="#consultoria">Consultoria</a>
+          <a href="#feedbacks">Feedbacks</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </header>
+      
 
   <section class="hero">
     <div class="hero-wrapper">
@@ -46,18 +49,20 @@
         <img src="perfil.png" alt="Felipe Lima">
       </div>
       <div class="hero-content">
-        <h1>Transforme seu corpo<br><strong>com método e resultado</strong></h1>
-        <p>Venha fazer parte do meu time de consultoria online com acompanhamento individual e treinos personalizados.</p>
+        <h2 data-aos="fade-up">Transforme seu corpo<br><strong>com método e resultado</strong></h2>
+        <p data-aos="fade-up">Venha fazer parte do meu time de consultoria online com acompanhamento individual e treinos personalizados.</p>
         <div class="hero-buttons">
-            <a class="btn-primary btn-whatsapp-cta" href="https://wa.me/553592436211?text=Olá%20Felipe,%20quero%20começar%20meu%20treinamento%20online!" target="_blank">💬 Começar agora</a>
+           <a class="btn-primary btn-whatsapp-cta" href="formulario.html" target="_blank">
+  💬 Quero começar
+</a>
 
-          <a class="btn-outline" href="#consultoria">Saiba mais</a>
+          <a class="btn-outline" href="#como-funciona">Saiba mais</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="timeline" id="como-funciona">
+  <section class="timeline" id="como-funciona" data-aos="zoom-in">
     <h2>Como funciona minha consultoria</h2>
     <div class="timeline-container">
       <div class="timeline-step">
@@ -92,13 +97,34 @@
       </div>
     </div>
   </section>
+<section id="mfit-app" class="app-section">
+  <div class="app-container">
+    <div class="app-text" data-aos="fade-right">
+      <h2>Receba seus treinos pelo app MFit</h2>
+      <p>Você acessa seus treinos personalizados direto no celular com vídeos, cronômetro, controle de carga e feedback direto comigo — tudo pelo app MFit Personal.</p>
+      <ul>
+        <li>📲 Prático e intuitivo</li>
+        <li>📈 Evolução registrada por treino</li>
+        <li>🔔 Alertas e lembretes automáticos</li>
+        <li>💬 Comunicação direta com o treinador</li>
+      </ul>
+    </div>
 
-  <section class="contador">
+    <div class="app-image" data-aos="fade-left">
+      <img src="mfit-mockup.png" alt="Tela do app MFit">
+    </div>
+  </div>
+</section>
+
+
+  <section class="contador" data-aos="zoom-in">
     <p id="contador-alunos" class="contador-texto"></p>
     <p class="contador-alerta">⚠️ Vagas limitadas para manter um acompanhamento individualizado.</p>
   </section>
 
-  <section id="consultoria" class="benefits">
+  
+
+  <section id="consultoria" class="benefits" data-aos="slide-up">
     <h2>O que está incluso na consultoria:</h2>
     <div class="benefits-grid">
       <div class="benefit-card">📋 Avaliação física individual</div>
@@ -128,19 +154,28 @@
       
   </section>
 
+  
   <footer>
     <p>&copy; 2025 Felipe Lima. Todos os direitos reservados.</p>
   </footer>
   <script>
-  function toggleMenu() {
-    const nav = document.getElementById("nav-menu");
-    nav.classList.toggle("hidden");
-  }
+    function toggleMenu() {
+      const nav = document.getElementById("nav-menu");
+      nav.classList.toggle("hidden");
+    }
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // duração da animação em milissegundos
+    easing: 'ease-in-out', // suavidade da animação
+    once: true,     // anima só uma vez (não repete)
+  });
 </script>
 
-<a href="https://wa.me/553592436211?text=Olá%20Felipe,%20quero%20começar%20meu%20treinamento%20online!" class="whatsapp-float" target="_blank" title="Fale comigo no WhatsApp">
-  💬
-</a>
-
+  <a href="https://wa.me/553592436211?text=Olá%20Felipe,%20quero%20começar%20meu%20treinamento%20online!" class="whatsapp-float" target="_blank" title="Fale comigo no WhatsApp">
+    💬
+  </a>
+  
 </body>
 </html>
