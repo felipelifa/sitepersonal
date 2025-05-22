@@ -44,8 +44,15 @@
       
 
 <section class="section-fundo">
-  <img src="cta.webp" alt="Fundo">
-</section>         
+  <picture>
+    <!-- Imagem que aparece no mobile -->
+    <source media="(max-width: 768px)" srcset="cta2.png">
+    
+    <!-- Imagem que aparece no desktop -->
+    <img src="cta.webp" alt="Fundo">
+  </picture>
+</section>
+         
   <section class="timeline" id="como-funciona" data-aos="zoom-in">
     <h2>Veja abaixo como funciona minha consultoria.</h2>
     <div class="timeline-container">
