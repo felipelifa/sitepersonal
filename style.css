@@ -262,7 +262,12 @@ body {
   }
   
   .timeline h2 {
+    margin-top: -3%;
     font-size: 2rem;
+    color: #f1f1f1;
+  }
+  .timeline h3 {
+    font-size: 1.2rem;
     margin-bottom: 3rem;
     color: #f1f1f1;
   }
