@@ -43,12 +43,130 @@ body {
     font-size: 0.95rem;
     color: #f1f1f1;
   }
+/* HERO STYLE */
 .hero-principal {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 80px;
+  background-color: #0f0f0f;
+  color: white;
+  padding: 120px 20px;
   text-align: center;
-  margin-bottom: -10%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Tag superior */
+.tag {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid #00ff88;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: #00ff88;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Headline */
+.hero-principal h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-principal .destaque {
+  color: #00ff88;
+}
+
+/* Subtexto */
+.sub {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+/* Prova Social */
+.prova-social {
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.prova-social strong {
+  font-size: 1.6rem;
+  color: #00ff88;
+}
+
+/* Scroll Down */
+.scroll-down {
+  margin-top: 60px;
+}
+
+.scroll-down span {
+  display: block;
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.scroll-down .seta {
+  width: 24px;
+  height: 24px;
+  border-bottom: 3px solid #00ff88;
+  border-right: 3px solid #00ff88;
+  transform: rotate(45deg);
+  margin: 0 auto;
+  animation: bounce 1.5s infinite;
+}
+
+/* Animação da seta */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(45deg);
+  }
+}
+
+
+
+/* CTA */
+.cta-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.botao-cta {
+  border: 1px solid #00ff88;
+  padding: 14px 28px;
+  border-radius: 50px;
+  color: #00ff88;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.botao-cta:hover {
+  background-color: #00ff88;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* Prova Social */
+.prova-social {
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.prova-social strong {
+  font-size: 1.6rem;
+  color: #00ff88;
 }
 
 /* Texto pequeno (abertura) */
@@ -137,100 +255,16 @@ body {
   height: auto;
   display: block;
 }
-.hero-dor {
-  padding: 120px 20px;
-  text-align: center;
-}
+/* HERO COM MELHORIAS - ELEGANTE + DINÂMICO */
 
-.container-hero {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Headline */
-.hero-dor h2 {
-  font-size: 3rem;
-  color: #00ff88;
-  font-weight: 800;
-  margin-bottom: 30px;
-}
-
-/* Bloco dinâmico */
-.content-bloco {
-  position: relative;
-  height: auto;
-  min-height: 220px;
-}
-
-/* Lista das dores */
-.lista-dor {
-  list-style: none;
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 700px;
-  text-align: left;
-  background: rgba(255, 255, 255, 0.02);
-  border-left: 4px solid #00ff88;
-  border-radius: 10px;
-  backdrop-filter: blur(6px);
-  animation: fadeOut 5s ease forwards;
-  animation-delay: 3s;
-}
-
-.lista-dor li {
-  font-size: 1.4rem;
-  margin-bottom: 14px;
-  line-height: 1.6;
-}
-
-/* Solução */
-.solucao-bloco {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 255, 136, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  border-left: 4px solid #00ff88;
-  backdrop-filter: blur(8px);
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 5s;
-}
-
-.solucao-bloco h3 {
-  color: #00ff88;
-  font-size: 1.7rem;
-  margin-bottom: 14px;
-}
-
-.solucao-bloco p {
-  font-size: 1.3rem;
-  line-height: 1.6;
-}
-
-/* Texto central */
-.texto-central {
-  color: #d3e9f7;
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 40px auto 0 auto;
-  line-height: 1.8;
-  font-weight: 500;
-}
-
-/* Animações */
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
+/* Animação de entrada */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
+
+
 
 
 .cta-bloco {
@@ -404,6 +438,7 @@ body {
     background-color: #111;
     padding: 4rem 2rem;
     text-align: center;
+    margin-top: -20%;
   }
   
   .timeline h2 {
@@ -660,21 +695,7 @@ body {
   .timeline-step p {
     font-size: 0.95rem;
   }
-.hero-dor h2 {
-    font-size: 2.2rem;
-  }
-  .lista-dor li {
-    font-size: 1.15rem;
-  }
-  .solucao-bloco h3 {
-    font-size: 1.4rem;
-  }
-  .solucao-bloco p {
-    font-size: 1.1rem;
-  }
-  .texto-central {
-    font-size: 1.05rem;
-  }
+
   /* HERO */
   .hero-wrapper {
     flex-direction: column;
