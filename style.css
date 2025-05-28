@@ -438,7 +438,7 @@ body {
     background-color: #111;
     padding: 4rem 2rem;
     text-align: center;
-    margin-top: -20%;
+    margin-top: -5%;
   }
   
   .timeline h2 {
@@ -635,7 +635,43 @@ body {
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
+.cards-evolucao {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 60px auto;
+  max-width: 1200px;
+}
 
+.card-cyber {
+  background: linear-gradient(45deg, #1a1a1a, #262626);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  width: 280px;
+  padding: 18px;
+  box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.card-cyber:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 255, 170, 0.5);
+}
+
+.card-cyber img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-cyber p {
+  color: #00ff88;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
  @media (max-width: 768px) {
   
