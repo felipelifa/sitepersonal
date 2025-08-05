@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script>
-    // Simulador de contador fictício de alunos
     let alunos = 193;
     function atualizarContador() {
       const contador = document.getElementById('contador-alunos');
@@ -16,53 +15,40 @@
     }
     document.addEventListener('DOMContentLoaded', atualizarContador);
   </script>
-<script>
-  let wantsToLeave = false;
-  window.addEventListener('beforeunload', function (e) {
-    wantsToLeave = true;
-    e.preventDefault();
-    e.returnValue = 'Antes de sair, que tal garantir sua vaga na consultoria?';
-  });
-
-  window.addEventListener('unload', function () {
-    if (wantsToLeave) {
-      window.location.href = 'https://wa.me/553592436211?text=Quero%20garantir%20minha%20vaga%20na%20consultoria!';
-    }
-  });
-</script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '676452408550530');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=676452408550530&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <script>
+    let wantsToLeave = false;
+    window.addEventListener('beforeunload', function (e) {
+      wantsToLeave = true;
+      e.preventDefault();
+      e.returnValue = 'Antes de sair, que tal garantir sua vaga na consultoria?';
+    });
+    window.addEventListener('unload', function () {
+      if (wantsToLeave) {
+        window.location.href = 'https://wa.me/553592436211?text=Quero%20garantir%20minha%20vaga%20na%20consultoria!';
+      }
+    });
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '676452408550530');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=676452408550530&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
-  <!-- Navegação de slides -->
-  <div class="slide-navigation">
-    <div class="slide-progress">
-      <div class="progress-bar" id="progress-bar"></div>
-    </div>
-    <div class="slide-controls">
-      <button class="slide-btn prev-btn" onclick="previousSlide()" id="prev-btn">‹</button>
-      <span class="slide-counter" id="slide-counter">1 / 7</span>
-      <button class="slide-btn next-btn" onclick="nextSlide()" id="next-btn">›</button>
-    </div>
-  </div>
 
-  <!-- Navegação de slides -->
-  <div class="slide-navigation">
+
+    <div class="slide-navigation">
     <div class="slide-progress">
       <div class="progress-bar" id="progress-bar"></div>
     </div>
@@ -265,15 +251,12 @@ src="https://www.facebook.com/tr?id=676452408550530&ev=PageView&noscript=1"
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
-    });
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
-    // Sistema de slides
     let currentSlide = 1;
     const totalSlides = 7;
+    let startX = 0;
+    let endX = 0;
 
     function updateSlideDisplay() {
       const slides = document.querySelectorAll('.slide');
@@ -282,25 +265,15 @@ src="https://www.facebook.com/tr?id=676452408550530&ev=PageView&noscript=1"
       const prevBtn = document.getElementById('prev-btn');
       const nextBtn = document.getElementById('next-btn');
 
-      // Remove active de todos os slides
       slides.forEach(slide => slide.classList.remove('active'));
-      
-      // Adiciona active ao slide atual
       const activeSlide = document.querySelector(`[data-slide="${currentSlide}"]`);
-      if (activeSlide) {
-        activeSlide.classList.add('active');
-      }
+      if (activeSlide) activeSlide.classList.add('active');
 
-      // Atualiza barra de progresso
       const progress = (currentSlide / totalSlides) * 100;
-      progressBar.style.width = progress + '%';
-
-      // Atualiza contador
-      slideCounter.textContent = `${currentSlide} / ${totalSlides}`;
-
-      // Controla visibilidade dos botões
-      prevBtn.style.opacity = currentSlide === 1 ? '0.5' : '1';
-      nextBtn.style.opacity = currentSlide === totalSlides ? '0.5' : '1';
+      if (progressBar) progressBar.style.width = progress + '%';
+      if (slideCounter) slideCounter.textContent = `${currentSlide} / ${totalSlides}`;
+      if (prevBtn) prevBtn.style.opacity = currentSlide === 1 ? '0.5' : '1';
+      if (nextBtn) nextBtn.style.opacity = currentSlide === totalSlides ? '0.5' : '1';
     }
 
     function nextSlide() {
@@ -317,7 +290,9 @@ src="https://www.facebook.com/tr?id=676452408550530&ev=PageView&noscript=1"
       }
     }
 
-    // Navegação por teclado
+    window.nextSlide = nextSlide;
+    window.previousSlide = previousSlide;
+
     document.addEventListener('keydown', function(e) {
       if (e.key === 'ArrowRight' || e.key === ' ') {
         e.preventDefault();
@@ -328,118 +303,20 @@ src="https://www.facebook.com/tr?id=676452408550530&ev=PageView&noscript=1"
       }
     });
 
-    // Navegação por swipe (mobile)
-    let startX = 0;
-    let endX = 0;
-
     document.addEventListener('touchstart', function(e) {
       startX = e.touches[0].clientX;
     });
 
     document.addEventListener('touchend', function(e) {
       endX = e.changedTouches[0].clientX;
-      handleSwipe();
-    });
-
-    function handleSwipe() {
-      const threshold = 50;
       const diff = startX - endX;
-
-      if (Math.abs(diff) > threshold) {
-        if (diff > 0) {
-          nextSlide(); // Swipe left = próximo slide
-        } else {
-          previousSlide(); // Swipe right = slide anterior
-        }
-      }
-    }
-
-    // Inicializa o display
-    document.addEventListener('DOMContentLoaded', function() {
-      updateSlideDisplay();
-      atualizarContador();
-    });
-
-    function updateSlideDisplay() {
-      const slides = document.querySelectorAll('.slide');
-      const progressBar = document.getElementById('progress-bar');
-      const slideCounter = document.getElementById('slide-counter');
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
-
-      // Remove active de todos os slides
-      slides.forEach(slide => slide.classList.remove('active'));
-      
-      // Adiciona active ao slide atual
-      const activeSlide = document.querySelector(`[data-slide="${currentSlide}"]`);
-      if (activeSlide) {
-        activeSlide.classList.add('active');
-      }
-
-      // Atualiza barra de progresso
-      const progress = (currentSlide / totalSlides) * 100;
-      progressBar.style.width = progress + '%';
-
-      // Atualiza contador
-      slideCounter.textContent = `${currentSlide} / ${totalSlides}`;
-
-      // Controla visibilidade dos botões
-      prevBtn.style.opacity = currentSlide === 1 ? '0.5' : '1';
-      nextBtn.style.opacity = currentSlide === totalSlides ? '0.5' : '1';
-    }
-
-    function nextSlide() {
-      if (currentSlide < totalSlides) {
-        currentSlide++;
-        updateSlideDisplay();
-      }
-    }
-
-    function previousSlide() {
-      if (currentSlide > 1) {
-        currentSlide--;
-        updateSlideDisplay();
-      }
-    }
-
-    // Navegação por teclado
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowRight' || e.key === ' ') {
-        e.preventDefault();
-        nextSlide();
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        previousSlide();
-      }
-    });
-
-    // Navegação por swipe (mobile)
-    let startX = 0;
-    let endX = 0;
-
-    document.addEventListener('touchstart', function(e) {
-      startX = e.touches[0].clientX;
-    });
-
-    document.addEventListener('touchend', function(e) {
-      endX = e.changedTouches[0].clientX;
-      handleSwipe();
-    });
-
-    function handleSwipe() {
       const threshold = 50;
-      const diff = startX - endX;
-
       if (Math.abs(diff) > threshold) {
-        if (diff > 0) {
-          nextSlide(); // Swipe left = próximo slide
-        } else {
-          previousSlide(); // Swipe right = slide anterior
-        }
+        if (diff > 0) nextSlide();
+        else previousSlide();
       }
-    }
+    });
 
-    // Inicializa o display
     document.addEventListener('DOMContentLoaded', function() {
       updateSlideDisplay();
       atualizarContador();
