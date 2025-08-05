@@ -642,6 +642,51 @@ footer {
 
 /* Responsivo */
 @media (max-width: 768px) {
+  .apresentacao-felipe h1 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .apresentacao-felipe p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .af-quote {
+    font-size: 0.85rem;
+    padding: 10px;
+    margin: 12px 0;
+  }
+
+  .af-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .af-card p {
+    font-size: 0.8rem;
+  }
+
+  .af-icon {
+    font-size: 1.3rem;
+  }
+
+  .af-card {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .af-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .af-left,
+  .af-right {
+    width: 100%;
+  }
+
   .slide-navigation {
     padding: 10px 15px;
   }
@@ -689,10 +734,7 @@ footer {
     padding: 0 20px;
   }
   
-  .app-container {
-    flex-direction: column;
-    text-align: center;
-  }
+
   
   .app-text h2 {
     font-size: 2rem;
@@ -721,4 +763,221 @@ footer {
     overflow-y: auto;
     padding: 2rem 1rem;
   }
+   .timeline h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .timeline h3 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .timeline-step {
+    padding: 10px;
+    font-size: 0.78rem;
+    border-radius: 8px;
+  }
+  .timeline-step h3 {
+    font-size: 0.88rem;
+    margin-top: 4px;
+  }
+
+  .timeline-step p {
+    font-size: 0.78rem;
+    line-height: 1.25;
+    margin-top: 4px;
+  }
+.timeline-container {
+    padding: 0 12px 20px 12px; /* margem extra no final */
+    gap: 8px;
+  }
+
+    .step-number {
+    font-size: 1rem;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+  }
+
+
+  .timeline {
+  padding-bottom: 90px; /* espaço extra pra não ser escondido pelo rodapé */
 }
+
+  .app-image img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+  .app-text, .app-image {
+    flex: 1;
+  }
+  .slide[data-slide="5"] .app-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .slide[data-slide="5"] .app-text {
+    width: 100%;
+  }
+
+  .slide[data-slide="5"] .app-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slide[data-slide="5"] .app-image img {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+  }
+    .slide[data-slide="4"] .app-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .slide[data-slide="4"] .app-text {
+    width: 100%;
+  }
+
+  .slide[data-slide="4"] .app-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slide[data-slide="4"] .app-image img {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+  }
+   .slide[data-slide="4"] .app-text h2 {
+    margin-top: 1rem; /* você pode ajustar esse valor */
+  }
+}@media (max-width: 480px) {
+  section {
+    padding: 40px 20px !important;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word;
+  }
+
+  p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .slide {
+    padding-bottom: 80px !important;
+  }
+
+  .slide h2,
+  .slide h3 {
+    margin-bottom: 20px !important;
+  }
+
+  .apresentacao-felipe {
+    margin-bottom: 20px !important;
+  }
+
+  .depoimento p,
+  .descricao-app p,
+  .passos-consultoria p {
+    font-size: 1rem !important;
+  }
+
+  .descricao-app ul,
+  .beneficios-app ul,
+  .passos-consultoria ul,
+  .planilha-beneficios ul {
+    padding-left: 20px;
+  }
+
+  .beneficios-app li,
+  .passos-consultoria li,
+  .planilha-beneficios li {
+    margin-bottom: 10px;
+    font-size: 1rem !important;
+  }
+
+  .icone-beneficio {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1rem !important;
+  }
+
+  .bloco-beneficio {
+    padding: 10px 15px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .imagem-app img,
+  .imagem-slide img,
+  .imagem-treino img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 20px auto 0 auto;
+  }
+
+  .card-processo,
+  .etapas-consultoria {
+    gap: 10px !important;
+  }
+
+  .etapas-consultoria .item {
+    padding: 10px 15px !important;
+    font-size: 0.95rem;
+  }
+
+  .passos-consultoria .item span.numero {
+    font-size: 1.2rem !important;
+    margin-right: 10px !important;
+  }
+
+  .mfit-slide h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .mfit-slide p {
+    font-size: 1rem !important;
+  }
+
+  .mfit-slide li {
+    font-size: 1rem !important;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    margin-top: 30px !important;
+  }
+
+  /* Garantir que a altura total do slide não seja cortada */
+  .slide {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Garantir espaço para visualização da imagem final */
+  .slide img:last-child {
+    margin-bottom: 60px !important;
+  }
+}
+
