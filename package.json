@@ -1,0 +1,17 @@
+{
+  "name": "consultoria-felipe-lima",
+  "version": "1.0.0",
+  "description": "Site de consultoria online - Felipe Lima",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "start": "npx serve . -p 3000",
+    "build": "echo 'Build completed - static files ready'"
+  },
+  "keywords": ["consultoria", "fitness", "personal trainer"],
+  "author": "Felipe Lima",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
