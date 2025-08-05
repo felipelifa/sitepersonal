@@ -61,6 +61,18 @@ src="https://www.facebook.com/tr?id=676452408550530&ev=PageView&noscript=1"
     </div>
   </div>
 
+  <!-- Navegação de slides -->
+  <div class="slide-navigation">
+    <div class="slide-progress">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="slide-controls">
+      <button class="slide-btn prev-btn" onclick="previousSlide()" id="prev-btn">‹</button>
+      <span class="slide-counter" id="slide-counter">1 / 7</span>
+      <button class="slide-btn next-btn" onclick="nextSlide()" id="next-btn">›</button>
+    </div>
+  </div>
+
   <!-- Container principal dos slides -->
   <div class="slides-container" id="slides-container">
     
@@ -262,6 +274,91 @@ src="https://www.facebook.com/tr?id=676452408550530&ev=PageView&noscript=1"
     // Sistema de slides
     let currentSlide = 1;
     const totalSlides = 7;
+
+    function updateSlideDisplay() {
+      const slides = document.querySelectorAll('.slide');
+      const progressBar = document.getElementById('progress-bar');
+      const slideCounter = document.getElementById('slide-counter');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      // Remove active de todos os slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      // Adiciona active ao slide atual
+      const activeSlide = document.querySelector(`[data-slide="${currentSlide}"]`);
+      if (activeSlide) {
+        activeSlide.classList.add('active');
+      }
+
+      // Atualiza barra de progresso
+      const progress = (currentSlide / totalSlides) * 100;
+      progressBar.style.width = progress + '%';
+
+      // Atualiza contador
+      slideCounter.textContent = `${currentSlide} / ${totalSlides}`;
+
+      // Controla visibilidade dos botões
+      prevBtn.style.opacity = currentSlide === 1 ? '0.5' : '1';
+      nextBtn.style.opacity = currentSlide === totalSlides ? '0.5' : '1';
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlideDisplay();
+      }
+    }
+
+    function previousSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlideDisplay();
+      }
+    }
+
+    // Navegação por teclado
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        previousSlide();
+      }
+    });
+
+    // Navegação por swipe (mobile)
+    let startX = 0;
+    let endX = 0;
+
+    document.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchend', function(e) {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const threshold = 50;
+      const diff = startX - endX;
+
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          nextSlide(); // Swipe left = próximo slide
+        } else {
+          previousSlide(); // Swipe right = slide anterior
+        }
+      }
+    }
+
+    // Inicializa o display
+    document.addEventListener('DOMContentLoaded', function() {
+      updateSlideDisplay();
+      atualizarContador();
+    });
 
     function updateSlideDisplay() {
       const slides = document.querySelectorAll('.slide');
