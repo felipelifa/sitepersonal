@@ -96,62 +96,81 @@
 <body>
 
   <div class="form-container">
-    <h2>Ficha de Cadastro - Anamnese</h2>
-    <p class="intro">
-      Olá! Preencha esse formulário para se tornar um integrante do meu time.<br>
-      Após preencher, ele será enviado diretamente para mim no WhatsApp.<br>
-      Envie e depois eu te explico todos os detalhes sobre os <strong>planos e pagamentos.</strong>
-    </p>
+    <h2>Seu Novo Começo Começa Aqui 💪</h2>
+<p class="intro">
+  Preencha com calma! Esta ficha me ajuda a montar um treino <strong>totalmente personalizado para você</strong>.
+  Assim que enviar, eu recebo direto no WhatsApp e te explico tudo sobre planos, acesso ao app e próximos passos.
+</p>
 
     <form onsubmit="enviarParaWhatsApp(); return false;">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" required>
 
-      <label for="data-nascimento">Data de Nascimento:</label>
-      <input type="date" id="data-nascimento" required>
+  <label for="nome">Nome completo:</label>
+  <input type="text" id="nome" placeholder="Ex: João da Silva" required>
 
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" required>
+  <label for="data-nascimento">Data de nascimento:</label>
+  <input type="date" id="data-nascimento" required>
 
-      <label for="whatsapp">WhatsApp:</label>
-      <input type="tel" id="whatsapp" required>
+  <label for="email">E-mail:</label>
+  <input type="email" id="email" placeholder="exemplo@email.com" required>
 
-      <label for="genero">Sexo:</label>
-      <select id="genero" required>
-        <option value="">Selecione</option>
-        <option value="Masculino">Masculino</option>
-        <option value="Feminino">Feminino</option>
-      </select>
+  <label for="whatsapp">WhatsApp (com DDD):</label>
+  <input type="tel" id="whatsapp" placeholder="Ex: 35912345678" required>
 
-      <label for="objetivo">Objetivo do Treinamento:</label>
-      <textarea id="objetivo" rows="2"></textarea>
+  <label for="genero">Sexo:</label>
+  <select id="genero" required>
+    <option value="">Selecione</option>
+    <option value="Masculino">Masculino</option>
+    <option value="Feminino">Feminino</option>
+    <option value="Outro">Outro / Prefiro não informar</option>
+  </select>
 
-      <label for="atividade">Nível de atividade física:</label>
-      <select id="atividade" required>
-        <option value="">Selecione</option>
-        <option value="Sedentário">Sedentário</option>
-        <option value="Iniciante">Iniciante</option>
-        <option value="Intermediário">Intermediário</option>
-        <option value="Avançado">Avançado</option>
-      </select>
+  <label for="objetivo">Qual seu principal objetivo com o treino?</label>
+  <select id="objetivo" required>
+    <option value="">Selecione</option>
+    <option value="Emagrecimento">Emagrecer e definir</option>
+    <option value="Ganho de massa">Ganhar massa muscular</option>
+    <option value="Recomposição corporal">Perder gordura e ganhar músculo</option>
+    <option value="Melhorar condicionamento">Melhorar condicionamento físico</option>
+    <option value="Outro">Outro (especifique abaixo)</option>
+  </select>
+  <textarea id="objetivo-detalhe" rows="2" placeholder="Se marcou 'Outro', descreva aqui (opcional)"></textarea>
 
-      <label for="saude">Condições de saúde:</label>
-      <textarea id="saude" rows="2"></textarea>
+  <label for="atividade">Nível atual de atividade física:</label>
+  <select id="atividade" required>
+    <option value="">Selecione</option>
+    <option value="Sedentário">Sedentário (não treino atualmente)</option>
+    <option value="Iniciante">Iniciante (1 a 2x por semana)</option>
+    <option value="Intermediário">Intermediário (3 a 4x por semana)</option>
+    <option value="Avançado">Avançado (5x ou mais por semana)</option>
+  </select>
 
-      <label for="medicamentos">Medicamentos:</label>
-      <textarea id="medicamentos" rows="2"></textarea>
+  <label for="preferencia">Prefere treinar:</label>
+  <select id="preferencia">
+    <option value="">Selecione</option>
+    <option value="Academia">Na academia</option>
+    <option value="Casa">Em casa</option>
+    <option value="Ar livre">Ao ar livre</option>
+    <option value="Com equipamentos em casa">Tenho equipamentos em casa</option>
+  </select>
 
-      <label for="lesoes">Histórico de lesões:</label>
-      <textarea id="lesoes" rows="2"></textarea>
+  <label for="saude">Tem alguma condição de saúde ou limitação física?</label>
+  <textarea id="saude" rows="2" placeholder="Ex: Asma, hipotireoidismo, hérnia, etc."></textarea>
 
-      <label for="dias">Dias disponíveis para treino:</label>
-      <textarea id="dias" rows="2" placeholder="Ex.: Segunda, Quarta e Sexta"></textarea>
+  <label for="medicamentos">Usa algum medicamento atualmente?</label>
+  <textarea id="medicamentos" rows="2" placeholder="Ex: Anticoncepcional, ansiolítico, etc."></textarea>
 
-      <label for="horarios">Horários disponíveis:</label>
-      <textarea id="horarios" rows="2"></textarea>
+  <label for="lesoes">Já teve lesões ou cirurgias que impactam o treino?</label>
+  <textarea id="lesoes" rows="2" placeholder="Ex: Cirurgia no ombro em 2019, dor no joelho direito, etc."></textarea>
 
-      <button type="submit">Enviar pelo WhatsApp</button>
-    </form>
+  <label for="dias">Quais dias da semana pretende treinar?</label>
+  <textarea id="dias" rows="2" placeholder="Ex: Segunda, Quarta e Sexta"></textarea>
+
+  <label for="horarios">Quais horários costuma estar disponível?</label>
+  <textarea id="horarios" rows="2" placeholder="Ex: Manhã entre 6h-8h ou noite após 18h"></textarea>
+
+  <button type="submit">✅ Enviar no WhatsApp</button>
+</form>
+
   </div>
 
   <script>
